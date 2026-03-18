@@ -61,8 +61,9 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
                 }
-                .setNegativeButton("Cancel", null)
-                .show()
+
+                dialog.setNegativeButton("Cancel", null)
+                dialog.show()
         }
     }
 }
