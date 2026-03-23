@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">NewsReaderApp</string>
+    <string name="long_lorem_text">Artificial Intelligence is rapidly evolving. Researchers are finding new ways to integrate neural networks into daily human activities. From automated driving to predictive healthcare, the possibilities are becoming endless. In this section, we explore the deep technical architecture that makes modern language models so effective. The transformer architecture, first introduced in 2017, remains the backbone of most contemporary systems. By utilizing attention mechanisms, these models can focus on specific parts of an input sequence, allowing for much more nuanced and contextually relevant outputs than previously possible. As we move into 2024, the focus is shifting from simply making models larger to making them more efficient and specialized for specific industry needs.</string>
+</resources>
