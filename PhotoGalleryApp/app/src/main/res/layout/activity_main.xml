@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+        <!-- Selection Toolbar -->
+        <LinearLayout
+            android:id="@+id/selectionToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="16dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tvSelectionCount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0 Selected"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+
+            <ImageButton
+                android:id="@+id/btnShare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@android:drawable/ic_menu_share"
+                app:tint="@android:color/white" />
+
+            <ImageButton
+                android:id="@+id/btnDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@android:drawable/ic_menu_delete"
+                app:tint="@android:color/white"
+                android:layout_marginStart="16dp"/>
+        </LinearLayout>
+
+        <!-- Category Tabs -->
+        <HorizontalScrollView
+            android:id="@+id/tabsScroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/selectionToolbar"
+            android:scrollbars="none"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button android:id="@+id/btnAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="All" style="?attr/materialButtonOutlinedStyle"
+                    android:layout_marginEnd="8dp"/>
+                <Button android:id="@+id/btnNature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nature" style="?attr/materialButtonOutlinedStyle"
+                    android:layout_marginEnd="8dp"/>
+                <Button android:id="@+id/btnCity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="City" style="?attr/materialButtonOutlinedStyle"
+                    android:layout_marginEnd="8dp"/>
+                <Button android:id="@+id/btnAnimals"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Animals" style="?attr/materialButtonOutlinedStyle"
+                    android:layout_marginEnd="8dp"/>
+                <Button android:id="@+id/btnFoods"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Foods" style="?attr/materialButtonOutlinedStyle"
+                    android:layout_marginEnd="8dp"/>
+
+                <Button android:id="@+id/btnTravels"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Travels" style="?attr/materialButtonOutlinedStyle"
+                    android:layout_marginEnd="8dp"/>
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <GridView
+            android:id="@+id/gridView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/tabsScroll"
+            android:numColumns="2"
+            android:padding="4dp" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="24dp"
+            android:src="@android:drawable/ic_input_add" />
+
+
+
+</RelativeLayout>
