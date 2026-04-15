@@ -52,13 +52,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="🚶"
-                android:textAlignment="center"
-                android:textSize="24sp" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_steps"
+                android:layout_gravity="center" />
 
             <TextView
                 android:id="@+id/stepsValue"
@@ -94,13 +93,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="🔥"
-                android:textAlignment="center"
-                android:textSize="24sp"/>
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/calories"
+                android:layout_gravity="center" />
 
             <TextView
                 android:id="@+id/textView5"
@@ -136,13 +133,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/textView7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="💧"
-                android:textAlignment="center"
-                android:textSize="24sp" />
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/drop"
+                android:layout_gravity="center" />
 
             <TextView
                 android:id="@+id/textView8"
@@ -177,13 +172,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/textView13"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="🏋️"
-                android:textAlignment="center"
-                android:textSize="24sp" />
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/weightlifting"
+                android:layout_gravity="center" />
 
             <TextView
                 android:id="@+id/textView10"
@@ -205,7 +198,7 @@
 
     <TextView
         android:id="@+id/progressLabel"
-        layout_constraintStart_toStart="parent"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"

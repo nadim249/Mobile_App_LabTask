@@ -44,7 +44,8 @@ class MainActivity : AppCompatActivity() {
             val input = EditText(this)
 
             val dialog = AlertDialog.Builder(this)
-                dialog.setTitle("Enter Steps")
+            dialog.setTitle("Enter Steps")
+
                 dialog.setView(input)
                 dialog.setPositiveButton("Update") { _, _ ->
                     val value = input.text.toString().toIntOrNull()
