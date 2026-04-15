@@ -82,7 +82,6 @@ class MainActivity : AppCompatActivity() {
 
         dateButton.setOnClickListener {
             val cal = Calendar.getInstance()
-
             val dpd = DatePickerDialog(
                 this,
                 { _, year, month, day ->
