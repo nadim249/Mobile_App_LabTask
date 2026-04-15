@@ -46,12 +46,12 @@ class MainActivity : AppCompatActivity() {
         tvGPA = findViewById(R.id.tvGPA)
         tvSummary = findViewById(R.id.tvSummary)
 
-        // Add 6 Initial Dummy Rows as required
+
         addSubjectRow("Mathematics", 95, 100)
         addSubjectRow("Physics", 82, 100)
         addSubjectRow("Chemistry", 75, 100)
         addSubjectRow("English", 65, 100)
-        addSubjectRow("History", 35, 100) // Failed example
+        addSubjectRow("History", 35, 100)
         addSubjectRow("Programming", 88, 100)
 
         btnAdd.setOnClickListener {
@@ -82,7 +82,7 @@ class MainActivity : AppCompatActivity() {
         else ContextCompat.getColor(this, R.color.pass_green)
         tableRow.setBackgroundColor(bgColor)
 
-        // Create Cells
+
         tableRow.addView(createTextView(name))
         tableRow.addView(createTextView(obtained.toString()))
         tableRow.addView(createTextView(total.toString()))
@@ -90,7 +90,7 @@ class MainActivity : AppCompatActivity() {
 
         tableLayout.addView(tableRow)
 
-        // Update Stats
+
         totalSubjects++
         if (grade == "F") failed++ else passed++
         totalGPAPoints += gpaPoint
