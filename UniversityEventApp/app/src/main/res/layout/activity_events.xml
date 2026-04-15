@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+
+
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@android:color/white"
+            android:queryHint="Search events..."
+            android:iconifiedByDefault="false"
+            android:elevation="2dp"/>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:paddingHorizontal="16dp"
+            android:paddingBottom="8dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button android:id="@+id/btnAll" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="All" style="?attr/materialButtonOutlinedStyle" android:layout_marginEnd="8dp"/>
+                <Button android:id="@+id/btnTech" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tech" style="?attr/materialButtonOutlinedStyle" android:layout_marginEnd="8dp"/>
+                <Button android:id="@+id/btnSports" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Sports" style="?attr/materialButtonOutlinedStyle" android:layout_marginEnd="8dp"/>
+                <Button android:id="@+id/btnCultural" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Cultural" style="?attr/materialButtonOutlinedStyle" android:layout_marginEnd="8dp"/>
+                <Button android:id="@+id/btnAcademic" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Academic" style="?attr/materialButtonOutlinedStyle" android:layout_marginEnd="8dp"/>
+                <Button android:id="@+id/btnSocial" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Social" style="?attr/materialButtonOutlinedStyle" android:layout_marginEnd="8dp"/>
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvEvents"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="16dp"/>
+
+
+
+</LinearLayout>
