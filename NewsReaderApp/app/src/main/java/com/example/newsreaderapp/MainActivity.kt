@@ -37,18 +37,17 @@ class MainActivity : AppCompatActivity() {
         val secAnalysis = findViewById<TextView>(R.id.secAnalysis)
         val secConclusion = findViewById<TextView>(R.id.secConclusion)
 
-        // 1. Quick Navigation Logic
+
         findViewById<Button>(R.id.btnNavIntro).setOnClickListener { scrollToView(scrollView, secIntro) }
         findViewById<Button>(R.id.btnNavKey).setOnClickListener { scrollToView(scrollView, secKey) }
         findViewById<Button>(R.id.btnNavAnalysis).setOnClickListener { scrollToView(scrollView, secAnalysis) }
         findViewById<Button>(R.id.btnNavConclusion).setOnClickListener { scrollToView(scrollView, secConclusion) }
 
-        // 2. Back to Top
         fabTop.setOnClickListener {
             scrollView.smoothScrollTo(0, 0)
         }
 
-        // 3. Bookmark Toggle
+
         btnBookmark.setOnClickListener {
             isBookmarked = !isBookmarked
             if (isBookmarked) {
@@ -60,7 +59,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        // 4. Share Logic
+
         btnShare.setOnClickListener {
             val sendIntent: Intent = Intent().apply {
                 action = Intent.ACTION_SEND

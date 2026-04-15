@@ -8,7 +8,6 @@
     tools:context=".MainActivity"
     >
 
-        <!-- 1. Sticky Toolbar -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -57,7 +56,7 @@
                 android:orientation="vertical"
                 android:paddingBottom="80dp">
 
-                <!-- 2. Header Image -->
+
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -72,7 +71,7 @@
                     android:orientation="vertical"
                     android:padding="16dp">
 
-                    <!-- 3. Category Tag -->
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -81,7 +80,7 @@
                         android:textColor="@color/white"
                         android:textStyle="bold" />
 
-                    <!-- 4. Article Title -->
+
                     <TextView
                         android:id="@+id/tvTitle"
                         android:layout_width="match_parent"
@@ -92,7 +91,7 @@
                         android:textSize="28sp"
                         android:textStyle="bold" />
 
-                    <!-- 5. Author Row -->
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -131,7 +130,7 @@
                         android:layout_marginVertical="16dp"
                         android:background="@color/divider" />
 
-                    <!-- 6. Quick Navigation -->
+
                     <HorizontalScrollView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -175,7 +174,7 @@
                         </LinearLayout>
                     </HorizontalScrollView>
 
-                    <!-- 7. Article Sections -->
+
                     <TextView
                         android:id="@+id/secIntro"
                         android:layout_width="wrap_content"
@@ -240,7 +239,7 @@
                         android:lineSpacingExtra="4dp"
                         android:text="@string/long_lorem_text" />
 
-                    <!-- 8. Tags -->
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -279,7 +278,7 @@
                         </LinearLayout>
                     </HorizontalScrollView>
 
-                    <!-- 9. Related Articles -->
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -322,7 +321,7 @@
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
 
-        <!-- 10. Back to Top Button -->
+
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fabBackToTop"
             android:layout_width="wrap_content"
