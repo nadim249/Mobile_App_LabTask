@@ -75,7 +75,7 @@ class MainActivity : AppCompatActivity() {
         submitBtn = findViewById(R.id.submitBtn)
         resetBtn = findViewById(R.id.resetBtn)
 
-        val countries = arrayOf("Bangladesh", "India", "USA", "UK", "Canada")
+        val countries = arrayOf("Bangladesh", "India", "USA", "UK", "Canada", "Australia")
 
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, countries)
         spinner.adapter = adapter
