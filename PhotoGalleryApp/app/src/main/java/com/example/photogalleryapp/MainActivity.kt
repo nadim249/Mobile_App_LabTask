@@ -1,5 +1,6 @@
 package com.example.photogalleryapp
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -30,14 +31,12 @@ class MainActivity : AppCompatActivity() {
             insets
         }
         gridView = findViewById(R.id.gridView)
-        
-        // Populate the photo list
+
         setupData()
         
         adapter = PhotoAdapter(this, allPhotos)
         gridView.adapter = adapter
 
-        // Item Clicks
         gridView.setOnItemClickListener { _, _, position, _ ->
             val photo = adapter.getItem(position)
             if (isSelectionMode) {
@@ -50,7 +49,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        // Long Press to Enter Selection Mode
         gridView.setOnItemLongClickListener { _, _, position, _ ->
             if (!isSelectionMode) {
                 isSelectionMode = true
@@ -62,7 +60,6 @@ class MainActivity : AppCompatActivity() {
             false
         }
 
-        // Filtering Logic
         findViewById<Button>(R.id.btnAll).setOnClickListener { filterPhotos("All") }
         findViewById<Button>(R.id.btnNature).setOnClickListener { filterPhotos("Nature") }
         findViewById<Button>(R.id.btnCity).setOnClickListener { filterPhotos("City") }
@@ -70,7 +67,6 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.btnFoods).setOnClickListener { filterPhotos("Food") }
         findViewById<Button>(R.id.btnTravels).setOnClickListener { filterPhotos("Travel") }
 
-        // Delete Logic
         findViewById<ImageButton>(R.id.btnDelete).setOnClickListener {
             val selected = allPhotos.filter { it.isSelected }
             allPhotos.removeAll(selected)
@@ -78,13 +74,13 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "${selected.size} photos deleted", Toast.LENGTH_SHORT).show()
         }
 
-        // FAB to Add Photo
         findViewById<View>(R.id.fabAdd).setOnClickListener {
             allPhotos.add(Photo(allPhotos.size + 1, R.drawable.sample_image, "New Photo", "Nature"))
             adapter.notifyDataSetChanged()
         }
     }
 
+    @SuppressLint("DiscouragedApi")
     private fun setupData() {
         val imageData = listOf(
             "nature1" to "Nature", "nature2" to "Nature",
@@ -98,10 +94,8 @@ class MainActivity : AppCompatActivity() {
             val fileName = data.first
             val categoryName = data.second
 
-            // This line converts the String file name into a resource ID (Int)
             val resId = resources.getIdentifier(fileName, "drawable", packageName)
 
-            // Add to our photo list
             allPhotos.add(
                 Photo(
                     id = index + 1,

@@ -8,7 +8,6 @@
     tools:context=".MainActivity">
 
 
-        <!-- Selection Toolbar -->
         <LinearLayout
             android:id="@+id/selectionToolbar"
             android:layout_width="match_parent"
@@ -45,7 +44,6 @@
                 android:layout_marginStart="16dp"/>
         </LinearLayout>
 
-        <!-- Category Tabs -->
         <HorizontalScrollView
             android:id="@+id/tabsScroll"
             android:layout_width="match_parent"
