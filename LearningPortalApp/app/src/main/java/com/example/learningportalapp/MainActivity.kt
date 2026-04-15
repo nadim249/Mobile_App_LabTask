@@ -14,6 +14,7 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
@@ -38,7 +39,6 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        // Initialize Views
         webView = findViewById(R.id.webView)
         etUrl = findViewById(R.id.etUrl)
         progressBar = findViewById(R.id.progressBar)
@@ -47,7 +47,6 @@ class MainActivity : AppCompatActivity() {
         setupButtons()
         setupHardwareBackButton()
 
-        // Load Home URL initially
         loadUrlInWebView(HOME_URL)
     }
 
@@ -61,7 +60,6 @@ class MainActivity : AppCompatActivity() {
                 super.onPageStarted(view, url, favicon)
                 progressBar.visibility = View.VISIBLE
 
-                // Don't show the offline asset URL in the address bar
                 if (url != "file:///android_asset/offline.html") {
                     etUrl.setText(url)
                 }
@@ -74,7 +72,6 @@ class MainActivity : AppCompatActivity() {
 
             override fun onReceivedError(view: WebView?, request: WebResourceRequest?, error: WebResourceError?) {
                 super.onReceivedError(view, request, error)
-                // Load offline page if an error occurs (like no connection)
                 webView.loadUrl("file:///android_asset/offline.html")
             }
         }
@@ -88,20 +85,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupButtons() {
-        // Toolbar Buttons
-        findViewById<Button>(R.id.btnBack).setOnClickListener {
+        findViewById<ImageButton>(R.id.btnBack).setOnClickListener {
             if (webView.canGoBack()) webView.goBack() else Toast.makeText(this, "No more history", Toast.LENGTH_SHORT).show()
         }
 
-        findViewById<Button>(R.id.btnForward).setOnClickListener {
+        findViewById<ImageButton>(R.id.btnForward).setOnClickListener {
             if (webView.canGoForward()) webView.goForward()
         }
 
-        findViewById<Button>(R.id.btnRefresh).setOnClickListener { webView.reload() }
+        findViewById<ImageButton>(R.id.btnRefresh).setOnClickListener { webView.reload() }
 
-        findViewById<Button>(R.id.btnHome).setOnClickListener { loadUrlInWebView(HOME_URL) }
+        findViewById<ImageButton>(R.id.btnHome).setOnClickListener { loadUrlInWebView(HOME_URL) }
 
-        // Address Bar 'Go' Button & Keyboard 'Done'
         findViewById<Button>(R.id.btnGo).setOnClickListener { loadUrlFromAddressBar() }
 
         etUrl.setOnEditorActionListener { _, actionId, _ ->
@@ -113,18 +108,26 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        // Shortcut Buttons
-        findViewById<Button>(R.id.btnGoogle).setOnClickListener { loadUrlInWebView("https://www.google.com") }
-        findViewById<Button>(R.id.btnYoutube).setOnClickListener { loadUrlInWebView("https://www.youtube.com") }
-        findViewById<Button>(R.id.btnWiki).setOnClickListener { loadUrlInWebView("https://www.wikipedia.org") }
-        findViewById<Button>(R.id.btnKhan).setOnClickListener { loadUrlInWebView("https://www.khanacademy.org") }
-        findViewById<Button>(R.id.btnUni).setOnClickListener { loadUrlInWebView("https://www.aiub.edu") } // Replace with actual uni link
+        findViewById<Button>(R.id.btnGoogle).setOnClickListener {
+            loadUrlInWebView("https://www.google.com")
+        }
+        findViewById<Button>(R.id.btnYoutube).setOnClickListener {
+            loadUrlInWebView("https://www.youtube.com")
+        }
+        findViewById<Button>(R.id.btnWiki).setOnClickListener {
+            loadUrlInWebView("https://www.wikipedia.org")
+        }
+        findViewById<Button>(R.id.btnKhan).setOnClickListener {
+            loadUrlInWebView("https://www.khanacademy.org")
+        }
+        findViewById<Button>(R.id.btnUni).setOnClickListener {
+            loadUrlInWebView("https://www.aiub.edu")
+        }
     }
 
     private fun loadUrlFromAddressBar() {
         var urlInput = etUrl.text.toString().trim()
         if (urlInput.isNotEmpty()) {
-            // Validate URL and add https:// if missing
             if (!urlInput.startsWith("http://") && !urlInput.startsWith("https://")) {
                 urlInput = "https://$urlInput"
             }
@@ -140,20 +143,18 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    // Modern way to handle the hardware back button
     private fun setupHardwareBackButton() {
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 if (webView.canGoBack()) {
                     webView.goBack()
                 } else {
-                    finish() // Close app if no history left
+                    finish()
                 }
             }
         })
     }
 
-    // Helper function to check internet connectivity
     private fun isNetworkAvailable(): Boolean {
         val connectivityManager = getSystemService(CONNECTIVITY_SERVICE) as ConnectivityManager
         val network = connectivityManager.activeNetwork ?: return false

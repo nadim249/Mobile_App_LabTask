@@ -16,17 +16,45 @@
             android:padding="8dp"
             android:background="#E0E0E0">
 
-            <Button
+            <ImageButton
                 android:id="@+id/btnBack"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:layout_weight="1"
-                android:text="◀" />
-            <Button
+                android:src="@drawable/back"
+                android:backgroundTint="@color/skyblue"
+                android:contentDescription="Back"
+                android:scaleType="centerInside"/>
+
+            <ImageButton
                 android:id="@+id/btnForward"
-                android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="▶" />
-            <Button android:id="@+id/btnRefresh" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="🔄" />
-            <Button android:id="@+id/btnHome" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="🏠" />
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:src="@drawable/rightarrow"
+                android:backgroundTint="@color/skyblue"
+                android:contentDescription="Forward"
+                android:scaleType="centerInside"/>
+
+            <ImageButton
+                android:id="@+id/btnRefresh"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:src="@drawable/refresh"
+                android:backgroundTint="@color/violet"
+                android:contentDescription="Refresh"
+                android:scaleType="centerInside"/>
+
+            <ImageButton
+                android:id="@+id/btnHome"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:src="@drawable/home"
+                android:backgroundTint="@color/green"
+                android:contentDescription="Home"
+                android:scaleType="centerInside"/>
         </LinearLayout>
 
         <LinearLayout
@@ -49,7 +77,9 @@
                 android:id="@+id/btnGo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Go" />
+                android:text="Go"
+                android:backgroundTint="@color/skyblue"
+                />
         </LinearLayout>
 
     <ProgressBar
@@ -71,11 +101,32 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <Button android:id="@+id/btnGoogle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Google" android:layout_marginEnd="4dp"/>
-                <Button android:id="@+id/btnYoutube" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="YouTube" android:layout_marginEnd="4dp"/>
-                <Button android:id="@+id/btnWiki" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Wikipedia" android:layout_marginEnd="4dp"/>
-                <Button android:id="@+id/btnKhan" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Khan Academy" android:layout_marginEnd="4dp"/>
-                <Button android:id="@+id/btnUni" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="University" />
+                <Button
+                    android:id="@+id/btnGoogle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Google"
+                    android:layout_marginEnd="4dp"/>
+                <Button
+                    android:id="@+id/btnYoutube"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="YouTube"
+                    android:layout_marginEnd="4dp"/>
+                <Button android:id="@+id/btnWiki"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Wikipedia"
+                    android:layout_marginEnd="4dp"/>
+                <Button android:id="@+id/btnKhan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Khan Academy"
+                    android:layout_marginEnd="4dp"/>
+                <Button android:id="@+id/btnUni"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="University" />
             </LinearLayout>
         </HorizontalScrollView>
 
